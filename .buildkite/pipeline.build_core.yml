@@ -1,4 +1,4 @@
-#ci:group=:book: core tests (civ2)
+#ci:group=core tests (civ2)
 
 - label: ":python:"
   conditions: ["RAY_CI_PYTHON_AFFECTED"]
@@ -7,7 +7,7 @@
   commands:
     - cleanup() { if [ "${BUILDKITE_PULL_REQUEST}" = "false" ]; then ./ci/build/upload_build_info.sh; fi }; trap cleanup EXIT
     - ./ci/env/env_info.sh
-    - bazel run //ci/ray_ci -- //python/ray/tests/... //python/ray/dag/... core --workers "$${BUILDKITE_PARALLEL_JOB_COUNT}" --worker-id "$${BUILDKITE_PARALLEL_JOB}" --parallelism-per-worker 3
+    - bazel run //ci/ray_ci -- //python/ray/tests/... //python/ray/dag/... python/ray/autoscaler/v2/... core --workers "$${BUILDKITE_PARALLEL_JOB_COUNT}" --worker-id "$${BUILDKITE_PARALLEL_JOB}" --parallelism-per-worker 3
 
 - label: ":python: flaky"
   conditions: ["RAY_CI_PYTHON_AFFECTED"]
@@ -16,4 +16,4 @@
   commands:
     - cleanup() { if [ "${BUILDKITE_PULL_REQUEST}" = "false" ]; then ./ci/build/upload_build_info.sh; fi }; trap cleanup EXIT
     - ./ci/env/env_info.sh
-    - bazel run //ci/ray_ci -- //python/ray/tests/... //python/ray/dag/... core --run-flaky-tests
+    - bazel run //ci/ray_ci -- //python/ray/tests/... //python/ray/dag/... python/ray/autoscaler/v2/... core --run-flaky-tests

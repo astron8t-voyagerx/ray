@@ -71,7 +71,10 @@ def main(
     logger.info(f"Running tests: {test_targets}")
     return_code = run_tests(
         test_targets,
-        ["DL=1 ./ci/env/install-dependencies.sh"],
+        [
+            "DL=1 ./ci/env/install-dependencies.sh",
+            "pip install ray[client]",
+        ],
         parallelism_per_worker,
     )
     sys.exit(return_code)
@@ -103,7 +106,7 @@ def _get_all_test_query(targets: List[str], team: str, size: str) -> str:
     except_query = " union ".join(
         [
             f"attr(tags, {t}, {test_query})"
-            for t in ["debug_tests", "asan_tests", "ray_ha"]
+            for t in ["debug_tests", "asan_tests", "ray_ha", "post_wheel_build"]
         ]
     )
 

@@ -66,7 +66,8 @@ def test_get_all_test_query() -> None:
         "attr(size, medium, tests(a) union tests(b)))) except "
         "(attr(tags, debug_tests, tests(a) union tests(b)) union "
         "attr(tags, asan_tests, tests(a) union tests(b)) union "
-        "attr(tags, ray_ha, tests(a) union tests(b)))"
+        "attr(tags, ray_ha, tests(a) union tests(b)) union"
+        "attr(tags, post_wheel_build, tests(a) union tests(b)))"
     )
 
 

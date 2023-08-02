@@ -84,7 +84,7 @@ py_test_module_list(
     "test_client_reconnect.py",
   ],
   size = "large",
-  tags = ["exclusive", "client_tests", "team:serverless"],
+  tags = ["exclusive", "client_tests", "team:core"],
   deps = ["//:ray_lib", ":conftest"],
 )
 
@@ -100,7 +100,7 @@ py_test_module_list(
     "test_client_library_integration.py",
   ],
   size = "medium",
-  tags = ["exclusive", "client_tests", "team:serverless"],
+  tags = ["exclusive", "client_tests", "team:core"],
   deps = ["//:ray_lib", ":conftest"],
 )
 
@@ -232,7 +232,7 @@ py_test_module_list(
     "test_monitor_service.py",
   ],
   size = "medium",
-  tags = ["exclusive", "medium_size_python_tests_k_to_z", "team:serverless"],
+  tags = ["exclusive", "medium_size_python_tests_k_to_z", "team:core"],
   deps = ["//:ray_lib", ":conftest"],
 )
 
@@ -256,7 +256,7 @@ py_test_module_list(
     "kuberay/test_kuberay_node_provider.py"
   ],
   size = "small",
-  tags = ["exclusive", "small_size_python_tests", "team:serverless"],
+  tags = ["exclusive", "small_size_python_tests", "team:core"],
   deps = ["//:ray_lib", ":conftest"],
 )
 
@@ -264,7 +264,7 @@ py_test(
   name = "test_autoscaler_yaml",
   size = "small",
   srcs = ["test_autoscaler_yaml.py"],
-  tags = ["exclusive", "small_size_python_tests", "team:serverless"],
+  tags = ["exclusive", "small_size_python_tests", "team:core"],
   deps = ["//:ray_lib", ":conftest"],
   data = [
     "additional_property.yaml",
@@ -283,7 +283,7 @@ py_test_module_list(
     "test_dataclient_disconnect.py",
   ],
   size = "medium",
-  tags = ["exclusive", "medium_size_python_tests_a_to_j", "team:serverless"],
+  tags = ["exclusive", "medium_size_python_tests_a_to_j", "team:core"],
   deps = ["//:ray_lib", ":conftest"],
 )
 
@@ -406,7 +406,7 @@ py_test(
     name = "test_autoscaler_aws",
     size = "small",
     srcs = ["aws/test_autoscaler_aws.py"],
-    tags = ["exclusive", "small_size_python_tests", "team:serverless"],
+    tags = ["exclusive", "small_size_python_tests", "team:core"],
     deps = ["//:ray_lib", ":conftest"],
 )
 
@@ -414,7 +414,7 @@ py_test(
     name = "test_aws_batch_tag_update",
     size = "small",
     srcs = ["aws/test_aws_batch_tag_update.py"],
-    tags = ["exclusive", "small_size_python_tests", "team:serverless"],
+    tags = ["exclusive", "small_size_python_tests", "team:core"],
     deps = ["//:ray_lib", ":conftest"],
 )
 
@@ -422,7 +422,7 @@ py_test(
     name = "test_gcp_node_provider",
     size = "small",
     srcs = ["gcp/test_gcp_node_provider.py"],
-    tags = ["exclusive", "small_size_python_tests", "team:serverless"],
+    tags = ["exclusive", "small_size_python_tests", "team:core"],
     deps = ["//:ray_lib", ":conftest"],
 )
 
@@ -486,7 +486,7 @@ py_test(
     name = "kuberay/test_autoscaling_e2e",
     size = "large",
     srcs = ["kuberay/test_autoscaling_e2e.py"],
-    tags = ["exclusive", "kuberay_operator", "team:serverless"],
+    tags = ["exclusive", "kuberay_operator", "team:core"],
     deps = ["//:ray_lib", ":conftest"],
 )
 
@@ -512,7 +512,7 @@ py_test_module_list(
   size = "large",
   name_suffix = "_client_mode",
   env = {"RAY_CLIENT_MODE": "1", "RAY_PROFILING": "1"},
-  tags = ["exclusive", "client_tests", "team:serverless"],
+  tags = ["exclusive", "client_tests", "team:core"],
   deps = ["//:ray_lib", ":conftest"],
 )
 
